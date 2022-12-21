@@ -1,3 +1,4 @@
+const { grid } = require("./screen");
 const Screen = require("./screen");
 
 class Cursor {
@@ -24,20 +25,31 @@ class Cursor {
 
   up() {
     // Move cursor up
+    if(this.row > 0){
+      this.row - 1
+    }
   }
 
   down() {
     // Move cursor down
+    if(this.row < grid.length - 1){
+      this.row + 1
+    }
   }
 
   left() {
     // Move cursor left
+    if(this.col > 0){
+      this.col - 1
+    }
   }
 
   right() {
     // Move cursor right
+    if(this.col < grid[0].length - 1){
+      this.col + 1
+    }
   }
-
 }
 
 
