@@ -25,30 +25,36 @@ class Cursor {
 
   up() {
     // Move cursor up
-    if(this.row > 0){
-      this.row - 1
+    this.resetBackgroundColor(this.row, this.col, this.cursorColor)
+
+    if(this.row > 0 ){
+      this.row -= 1
     }
+    this.setBackgroundColor(this.row, this.col, this.cursorColor)
   }
 
   down() {
     // Move cursor down
-    if(this.row < grid.length - 1){
-      this.row + 1
+    if(this.row < this.numRows - 1){
+      this.row += 1
     }
+    this.setBackgroundColor(this.row, this.col, this.cursorColor)
   }
 
   left() {
     // Move cursor left
     if(this.col > 0){
-      this.col - 1
+      this.col -= 1
     }
+    this.setBackgroundColor(this.row, this.col, this.cursorColor)
   }
 
   right() {
     // Move cursor right
-    if(this.col < grid[0].length - 1){
-      this.col + 1
+    if(this.col < this.numCols - 1){
+      this.col += 1
     }
+    this.setBackgroundColor(this.row, this.col, this.cursorColor)
   }
 }
 
